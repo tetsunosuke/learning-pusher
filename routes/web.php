@@ -20,5 +20,6 @@ Route::get('/', function () {
 use App\Events\TaskAdded;
 
 Route::get('/tasks', function () {
-    event(new TaskAdded);
+    $task = ['id' => 1, 'name' => 'メールの確認']; 
+    event(new TaskAdded($task));
 });
