@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Events\TaskAdded;
+
+Route::get('/tasks', function () {
+    event(new TaskAdded);
+});
